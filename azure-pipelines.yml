@@ -21,5 +21,5 @@ jobs:
   steps:
   - task: JenkinsQueueJob@1
     inputs:
-      serverEndpoint: 'jenkins'
+      serverEndpoint: 'jenkinstoken'
       jobName: 'Marjan'
