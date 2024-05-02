@@ -20,7 +20,7 @@ steps:
 - task: JenkinsQueueJob@2
   inputs:
     serverEndpoint: 'jenkins'
-    jobName: 'jenkinsqueue'
+    jobName: 'Marjan'
     captureConsole: true
     capturePipeline: true
     isParameterizedJob: false
