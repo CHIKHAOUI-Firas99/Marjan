@@ -16,11 +16,10 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-steps:
-- task: JenkinsQueueJob@2
-  inputs:
-    serverEndpoint: 'jenkins'
-    jobName: 'Marjan'
-    captureConsole: true
-    capturePipeline: true
-    isParameterizedJob: false
+jobs:
+- job: JenkinsJob
+  steps:
+  - task: JenkinsQueueJob@1
+    inputs:
+      serverEndpoint: 'jenkins'
+      jobName: 'Marjan'
