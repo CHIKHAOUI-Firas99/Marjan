@@ -27,4 +27,4 @@ steps:
   inputs:
     WebSiteName: 'insomeaIIS'
     VirtualApplication: 'insomeaIIS'
-    Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
+    Package: '$(System.DefaultWorkingDirectory)\**\jenkinsArtifacts'
