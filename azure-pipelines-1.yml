@@ -16,9 +16,3 @@ steps:
     jobName: 'Marjan'
     saveTo: 'jenkinsArtifacts'
     jenkinsBuild: 'LastSuccessfulBuild'
-
-- task: IISWebAppDeploymentOnMachineGroup@0
-  inputs:
-    WebSiteName: 'insomeaIIS'
-    VirtualApplication: 'insomeaIIS'
-    Package: '$(System.DefaultWorkingDirectory)\**\jenkinsArtifacts'
