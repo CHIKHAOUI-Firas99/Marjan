@@ -16,3 +16,9 @@ steps:
     jobName: 'Marjan'
     saveTo: 'jenkinsArtifacts'
     jenkinsBuild: 'LastSuccessfulBuild'
+
+- task: IISWebAppDeploymentOnMachineGroup@0
+  inputs:
+    WebSiteName: 'InsomeaIIS'
+    Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
+    
