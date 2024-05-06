@@ -17,4 +17,9 @@ steps:
     saveTo: 'jenkinsArtifacts'
     jenkinsBuild: 'LastSuccessfulBuild'
 
-    
+# IIS web app deploy v0
+# Deploy a website or web application using Web Deploy.
+- task: IISWebAppDeploymentOnMachineGroup@0
+  inputs:
+    WebSiteName: DeployementIIS     
+    Package: '$(System.DefaultWorkingDirectory)\**\publish' 
