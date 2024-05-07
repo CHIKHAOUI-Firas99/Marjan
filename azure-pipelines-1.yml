@@ -23,4 +23,4 @@ steps:
     azureSubscription: 'DevOps – MPN(e5b2c5cd-7140-4bdb-8452-50a2a89c25d5)'
     appType: 'webApp'
     WebAppName: 'marjan'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/jenkinsArtifacts/publish'
