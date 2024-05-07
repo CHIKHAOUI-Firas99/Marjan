@@ -17,9 +17,10 @@ steps:
     saveTo: 'jenkinsArtifacts'
     jenkinsBuild: 'LastSuccessfulBuild'
 
-# IIS web app deploy v0
-# Deploy a website or web application using Web Deploy.
-- task: IISWebAppDeploymentOnMachineGroup@0
+- task: AzureRmWebAppDeployment@4
   inputs:
-    WebSiteName: DeployementIIS     
-    Package: '$(System.DefaultWorkingDirectory)\**\publish' 
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'DevOps – MPN(e5b2c5cd-7140-4bdb-8452-50a2a89c25d5)'
+    appType: 'webApp'
+    WebAppName: 'marjan'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
