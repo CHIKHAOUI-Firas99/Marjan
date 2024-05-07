@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: Default
+  name: 'Default'
   demands:
   - agent.name -equals marjan
 
@@ -23,3 +23,20 @@ jobs:
     inputs:
       serverEndpoint: 'jenkinstoken'
       jobName: 'Marjan'
+
+- job: ArtifactDownloadAndDeploy
+  steps:
+  - task: JenkinsDownloadArtifacts@1
+    inputs:
+      jenkinsServerConnection: 'jenkinstoken'
+      jobName: 'Marjan'
+      saveTo: 'jenkinsArtifacts'
+      jenkinsBuild: 'LastSuccessfulBuild'
+
+  - task: AzureRmWebAppDeployment@4
+    inputs:
+      ConnectionType: 'AzureRM'
+      azureSubscription: 'DevOps – MPN(e5b2c5cd-7140-4bdb-8452-50a2a89c25d5)'
+      appType: 'webApp'
+      WebAppName: 'marjan'
+      packageForLinux: '$(System.DefaultWorkingDirectory)/jenkinsArtifacts/publish'
